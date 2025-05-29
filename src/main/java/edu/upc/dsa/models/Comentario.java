@@ -1,0 +1,55 @@
+package edu.upc.dsa.models;
+
+public class Comentario {
+    private String autor;
+    private String contenido;
+    private long timestamp;
+    private int votos;
+
+    public Comentario() {
+        this.votos = 0;
+    }
+
+    public Comentario(String autor, String contenido) {
+        this.autor = autor;
+        this.contenido = contenido;
+        this.timestamp = System.currentTimeMillis();
+        this.votos = 0;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public String getContenido() {
+        return contenido;
+    }
+
+    public void setContenido(String contenido) {
+        this.contenido = contenido;
+    }
+
+    public long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(long timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public int getVotos() {
+        return votos;
+    }
+
+    public void upvote() {
+        this.votos++;
+    }
+
+    public void downvote() {
+        this.votos--;
+    }
+}

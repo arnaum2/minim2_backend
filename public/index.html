@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BUZZ - BLITZ</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="CSS.css"> <!-- Hace el link con el html y los estilos-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Nos conectamos con el google.fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+<header id="main-header" class="header-portada">
+    <div class="header-logo">BUZZ BLITZ</div>
+    <div id="user-info"></div>
+</header>
+<!-- Se tienen que usar sections en todos esos contenedores que signifiquen algo independiente por si mismos,
+por ejemplo la landing page es una section de la web, al igual que la tienda, login,etc. En cambio el main content,
+al ser una cosa con tantas cosas, se puede hacer como div y dentro del main content ahi hacer section independientes sbs
+Esto es pq claro no es una section en si, dentro de el estan las sectiones-->
+
+<!-- LANDING PAGE, lo cual sera lo primero ue cargue y cuando le des click se abrira el nav -->
+<section id="landing" class="landing">
+    <video id="video-fondo" autoplay muted loop alt="gameplay del juego" class="video-fondo">
+        <source src="videos/videoplayback.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+        <h1 class="landing-title">BUZZ BLITZ</h1>
+    </div>
+</section>
+
+<div id ="mainContent" style="display:none;"><!-- Estara ocultada de primeras-->
+<nav> <!-- Esto seria la barra de guia de la web y se definen las pesatñas que tendran-->
+
+    <a href="#" id="nav-about" class="active">Quiénes somos</a> <!-- Se pone en Ancla vacia pq la interaccion se hara-->
+    <a href="#" id="nav-login">Log in</a><!--con JS en el script-->
+    <a href="#" id="nav-signup">Sign up</a>
+    <a href="#" id="nav-shop" style="display: none;">Tienda</a><!-- esta oculta-->
+</nav>
+
+<section id="about" class="container">
+    <h2>Quiénes Somos</h2>
+    <p>
+        En <strong>"Buzz Blitz"</strong> te sumerges en la aventura de una abeja que se ha extraviado y debe encontrar el camino de regreso a su colmena, amenazada por una astuta araña.
+    </p>
+    <p>
+        Nuestro equipo se ha comprometido a ofrecerte una experiencia única, combinando la nostalgia de los clásicos <em>crossyroad</em> con una temática fresca y original.
+    </p>
+    <p>
+        ¡Únete a la aventura y ayuda a salvar la colmena! Disfruta de este mundo lleno de flores, miel y desafíos que pondrán a prueba tus reflejos.
+    </p>
+</section>
+
+<section id="login" class="container">
+    <div class="form-box">
+        <form class="form" id="form-login">
+            <h2 class="title">Inicio de Sessión</h2>
+            <h3 class="subtitle">No te preocupes si no te acuerdas jejej...</h3>
+            <div class="form-container">
+                <input type="text" class="input" id="login-user" placeholder="Usuario o Email" required>
+                <input type="password" class="input" id="login-password" placeholder="Password" required>
+            </div>
+            <button id= "login-boton-submit" type="submit">Log in</button>
+        </form>
+        <div class="form-section">
+            <p>¿No tienes cuenta? <a href="#" id="link-to-signup">Crea una cuenta</a></p>
+            <p><a href="#" id="Olv-Contra">He olvidado mi Contraseña</a></p>
+        </div>
+    </div>
+</section>
+    <!-- La principal diferencia entre section y article esq section es una parte de la web y article
+    seria algo que se puede publicar de manera sola, por ejemplo un juego que tiene un mapa
+    pues las zonas serian section o las misiones obligatorias para seguir la historia que no acaban
+    ni tienen un inicio con sentido si no has hecho la anterior serian section.
+    En cambio las secundarias que podrias sacar a parte con otro juego serian los articulos. Y en este caso
+    los terminos y condiciones son una section de la web pero a la vez tambien se pueden publicar por si mismos, tienen
+    sentido solos, por lo cual se ha hecho un mega articulo con mini sections. Se ha hecho la section separando el
+    Header de el articulo de los terminos en si mismo.-->
+    <section id="terminos-condiciones" class = terms style="display: none;">
+        <article>
+            <header>
+            <h2>Terminos y Condiciones</h2>
+            </header>
+            <section class="">
+                <h3>1. Aceptación de los términos</h3>
+                <p>
+                    Al registrarte y utilizar la plataforma BUZZ - BLITZ, confirmas que has leído, entendido y aceptas estos Términos y Condiciones.
+                </p>
+            </section>
+
+            <section id="terminos-2">
+                <h3>2. Registro y Seguridad</h3>
+                <p>
+                    Para acceder a ciertas funcionalidades del juego, deberás registrarte proporcionando datos personales como tu correo electrónico, nombre de usuario y una contraseña. Es tu responsabilidad mantener la confidencialidad de tu contraseña y notificar a la administración de BUZZ - BLITZ en caso de sospecha de uso indebido de tu cuenta.
+                </p>
+            </section>
+
+            <section id="terminos-3">
+                <h3>3. Uso adecuado de la plataforma</h3>
+                <p>
+                    Te comprometes a utilizar la plataforma únicamente para fines lícitos y de acuerdo con la normativa vigente. Queda terminantemente prohibido el uso de la plataforma para actividades fraudulentas, dañinas o contrarias a la ética.
+                </p>
+            </section>
+
+            <section id="terminos-4">
+                <h3>4. Propiedad intelectual</h3>
+                <p>
+                    Todos los elementos gráficos, textos, logotipos, imágenes y demás contenidos incluidos en la plataforma son propiedad de BUZZ - BLITZ o de terceros autorizados. Queda prohibida su reproducción, distribución o modificación sin el consentimiento expreso de los titulares correspondientes.
+                </p>
+            </section>
+
+            <section id="terminos-5">
+                <h3>5. Privacidad y protección de datos</h3>
+                <p>
+                    Los datos personales que facilites en el proceso de registro serán tratados de forma confidencial y se utilizarán únicamente para los fines relacionados con el funcionamiento de la plataforma. Para más detalles, consulta nuestra Política de Privacidad.
+                </p>
+            </section>
+
+            <section id="terminos-6">
+                <h3>6. Modificaciones</h3>
+                <p>
+                    BUZZ - BLITZ se reserva el derecho de modificar en cualquier momento estos Términos y Condiciones. Los cambios serán publicados en la plataforma y se considerarán aceptados por ti si continúas utilizando el servicio tras su publicación.
+                </p>
+            </section>
+
+            <section id="terminos-7">
+                <h3>7. Responsabilidad</h3>
+                <p>
+                    La plataforma se ofrece "tal cual", y BUZZ - BLITZ no garantiza que el servicio esté libre de errores o sea ininterrumpido. En ningún caso se considerará responsable de daños o perjuicios derivados del uso o la imposibilidad de uso de la plataforma.
+                </p>
+            </section>
+
+            <section id="terminos-8">
+                <h3>8. Legislación aplicable</h3>
+                <p>
+                    Estos Términos y Condiciones se regirán e interpretarán de acuerdo con la legislación vigente en el país en que opere BUZZ - BLITZ. Cualquier controversia derivada de su interpretación o aplicación se someterá a los tribunales competentes.
+                </p>
+            </section>
+
+            <footer>
+                <p><em>Fecha de última actualización: 13/04/2025</em></p> <!--la etiqueta <em> se usa para emfatizar algo,
+                 lo normal es que salga en cursiva y le indica al navegador un dato importante-->
+            </footer>
+        </article>
+        <button id="rechazarTerminos">Rechazar</button>
+        <button id="aceptarTerminos">Aceptar</button>
+    </section>
+
+<section id="olvidadoContra" class="form-box" style="display: none;"><!-- Esto va a ser el he olvidado mi contraseña que va a pedir-->
+    <h3 class="title">Te has olvidado la Contraseña?</h3> <!--Una respuesta de una pregunta que ya haya respondido en el signup-->
+    <h4 class="subtitle">No pasa nada, escribe tu Correo o Usuario</h4>
+    <div id="enviar-resp"  class="form-container">
+        <input type="text" class="input" id="olv-usuario" placeholder="Usuario o Email" required>
+        <button id="enviar-usuario">Hecho</button>
+        <label id="pregunta-conseguida" style="display:none;"></label>
+        <input type="text" class="input" id="respuesta-olv" style="display: none;" placeholder="Responde a tu pregunta" required>
+        <button id="relogin" style="display: none;">Entrar</button>
+    </div>
+
+    <div id="update-password" class="form-container" style="display: none;">
+        <h3 class="title">Restablece la Contraseña</h3>
+        <label id="usuario-a-cambiar" style="display:none;"></label>
+        <input type="password" id="primera-contra" placeholder="Password" required>
+        <input type="password" id="segunda-contra" placeholder="Repite Password" required>
+        <button id="olv-a-login">Acceder</button>
+    </div>
+
+</section>
+
+<section id="signup" class="container">
+    <div class="form-box">
+        <form class="form" id="form-signup">
+            <h2 class="title">Regístrate</h2>
+            <h3 class="subtitle">Unete a la mejor comunidad</h3>
+            <div class="form-container">
+                <input type="text" class="input" id="signup-fullname" placeholder="Name" required>
+                <input type="text" class="input" id="signup-surname" placeholder="Surnames" required>
+                <input type="email" class="input" id="signup-email" placeholder="Email" required>
+                <input type="text" class="input" id="signup-user" placeholder="Usuario" required>
+                <input type="password" class="input" id="signup-password" placeholder="Password" required>
+                <input type="password" class="input" id="resignup-password" placeholder="Repeat Password" required>
+                <label class="text-sm mb-2 text-gray-900 cursor-pointer" for="security-question">
+                    Security Question
+                </label>
+                <select class="security-dropdown" id="security-question" required>
+                    <option value="">-- Select a security question --</option>
+                    <option value="nickname">El nombre de tu familiar mas mayor?</option>
+                    <option value="first-pet">Nombre de tu mascota?</option>
+                    <option value="mother-maiden">Tu comida favorita?</option>
+                    <option value="first-school">Como se llamaba tu escuela de Primaria?</option>
+                </select>
+                <input  id="answer-securityquestion" class="input" type="text" placeholder="Answer" required>
+            </div>
+            <label class="material-checkbox">
+                <input id="checkboxx" type="checkbox">
+                <span class="checkmark"></span>
+               <a id="Terminos-enlace" href="#"> <strong>Terminos y Condiciones</strong></a>
+            </label>
+            <button type="submit">Sign up</button>
+        </form>
+        <div class="form-section">
+            <p>¿Ya tienes cuenta? <a href="#" id="link-to-login">Log in</a></p>
+        </div>
+    </div>
+</section>
+
+<section id="shop" class="container"><!-- habra que usar ul-->
+    <h2>Tienda</h2>
+    <div id="tienda-content"><!--mirar si se necesita para css o no-->
+        <div id="recursos" class = "saldo">
+            <div class="recurso">
+                <img src="img/tarro.png" alt="Tarros" > <!-- FALTAN LAS IMGENEEEES-->
+                <span id="num-tarros">0</span>
+            </div>
+            <div class="recurso">
+                <img src="img/flor.png" alt="Flores" >
+                <span id="num-flores">0</span>
+            </div>
+            <div class="recurso">
+                <img src="img/flor-dorada.png" alt="Flores Doradas" >
+                <span id="num-flores-doradas">0</span>
+            </div>
+            <button id ="conversion" >Sacale la Miel a tus flores</button>
+        </div>
+        <section id="armas" class="categoria-tienda">
+            <h3>Armas</h3>
+            <ul id="listas-armas">
+                <li>
+                    <article class="item-arma">
+                        <h4 class="titulo-arma"></h4>
+                        <img src="img">
+                        <h5 class="precio-arma"></h5>
+                        <p class="descripcion-arma"></p>
+                        <button class="comprar-arma">Compra</button><!--Mirar de como cambiar el texto si ya lo tiene-->
+                    </article>
+                </li>
+
+            </ul>
+        </section>
+
+        <section id="skins" class="categoria-tienda">
+            <h3>Skins</h3>
+            <ul id="listas-skins">
+                <li>
+                    <article class="item-skin">
+                        <h4 class="titulo-skin">Nombre Skin</h4>
+                        <h5 class="precio-skin">Precio</h5>
+                        <p class="descripcion-skin">Descripción</p>
+                        <button class="comprar-skin">Compra</button>
+                    </article>
+                </li>
+            </ul>
+        </section>
+    </div>
+</section>
+    <script src="Script.js"></script>
+</div>
+</body>
+</html>
+
+ 
